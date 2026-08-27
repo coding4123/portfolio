@@ -494,7 +494,8 @@ export default function ServicesPage() {
                 inset-y-0
                 left-0
                 z-20
-                w-[100px]
+                w-[28px]
+                sm:w-[100px]
               "
               style={{
                 background:
@@ -511,7 +512,8 @@ export default function ServicesPage() {
                 inset-y-0
                 right-0
                 z-20
-                w-[100px]
+                w-[28px]
+                sm:w-[100px]
               "
               style={{
                 background:
@@ -532,11 +534,12 @@ export default function ServicesPage() {
                 gap-[18px]
                 overflow-x-auto
                 overflow-y-hidden
-                px-[100px]
+                px-[28px]
                 py-[30px]
                 scroll-smooth
                 snap-x
                 snap-mandatory
+                sm:px-[100px]
               "
               style={{
                 scrollbarWidth: 'none',
@@ -928,11 +931,6 @@ function ServiceCard({
           `}
         >
           View More
-
-          <span className="ml-[4px]">
-            ↗
-          </span>
-
         </Link>
 
       </div>

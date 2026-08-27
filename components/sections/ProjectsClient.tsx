@@ -341,9 +341,6 @@ function ProjectCard({
           className="mt-[7px] flex h-[21px] items-center justify-center rounded-full bg-[#10082B] text-[10px] font-medium text-white transition-all hover:bg-[#21134B]"
         >
           View project
-          <span className="ml-[3px] text-[10px]">
-            ↗
-          </span>
         </a>
 
       </div>
