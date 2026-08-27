@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="18" fill="#231359" />
+  <text x="50" y="58" font-family="Arial, sans-serif" font-size="44" fill="#F3EBFF" text-anchor="middle">AA</text>
+</svg>
+<svg width="65" height="42" viewBox="0 0 65 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.1711 0L32.2018 29.2202L41.1468 0H50.6881L65 41.2184H57.2477L45.9174 6.55964L35.7798 41.2184H28.6238L18.4862 7.15597L23.1711 0Z" fill="white"/>
+<path d="M0 41.2185L12.9952 0.000115712H23.0995L35.7798 41.2184L31.0091 41.2185L17.203 4.23645H18.7486L7.09872 41.2185H0ZM7.24184 32.2879V25.8475H28.8815V32.2879H7.24184Z" fill="white"/>
+</svg>

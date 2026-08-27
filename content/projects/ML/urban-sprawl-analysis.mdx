@@ -1,0 +1,97 @@
+---
+slug: urban-sprawl-analysis
+title: Urban Sprawl Analysis — Multi-Decadal Satellite Analysis
+summary: A geospatial machine learning project that maps and analyzes urban expansion across four Algerian cities from 2000 to 2024 using Landsat imagery, GHSL-based training labels, XGBoost classification, and spatial sprawl metrics.
+
+role: Not specified in report
+timeline: Academic Project
+team: Not specified in report
+category: Machine Learning
+featured: false
+image: 
+  - /images/projects/urban-sprawl.png
+  - /images/projects/urban-sprawl2.png
+  - /images/projects/urban-sprawl1.png
+
+
+
+year: 2026
+
+
+tags:
+  - Geospatial AI
+  - Satellite Imagery
+  - Remote Sensing
+  - Urban Sprawl
+  - Land Cover Classification
+  - XGBoost
+  - Landsat
+  - Google Earth Engine
+
+tools:
+  - Python
+  - Google Earth Engine
+  - Jupyter Notebook
+  - XGBoost
+  - Scikit-learn
+  - Landsat
+  - GHSL
+  - Pandas
+---
+# Urban Sprawl Analysis — Multi-Decadal Satellite Analysis
+
+## Overview
+
+We worked on **Urban Sprawl Analysis**, a geospatial machine learning project that investigates long-term urban expansion across four Algerian cities:
+
+- **Algiers** — coastal
+- **Oran** — coastal
+- **Sétif** — plateau
+- **Ghardaïa** — Saharan
+
+The analysis covers four temporal periods:
+
+- **2000**
+- **2010**
+- **2020**
+- **2024**
+
+We trained a shared machine learning model using data collected across all cities and epochs, then applied it consistently to each city and year.
+
+The resulting classification maps were used to calculate urban growth and sprawl metrics, allowing different geographic contexts and temporal growth patterns to be compared using a common methodology.
+
+## The Challenge
+
+> How can We use satellite imagery and supervised machine learning to consistently map and measure urban expansion across different Algerian geographic environments and multiple decades?
+
+Urban expansion is not uniform across cities.
+
+Coastal cities, plateau environments, and Saharan landscapes can have substantially different spectral characteristics, making built-up land difficult to distinguish consistently from vegetation, bare soil, and other land-cover types.
+
+The challenge therefore extends beyond producing a single urban map. The workflow needed to provide:
+
+- Consistent processing across different Landsat generations.
+- Reliable built-up/non-built-up classification.
+- Comparable results across cities and years.
+- Reduction of classification noise and small false patches.
+- Meaningful metrics for interpreting the spatial form of urban growth.
+
+## Methodology
+
+We followed this complete workflow across 12 stages:
+
+1. **We defined** the study areas by establishing geographic boundaries for Algiers, Oran, Sétif, and Ghardaïa across four epochs: 2000, 2010, 2020, and 2024.
+2. **We acquired and preprocessed** Landsat imagery by collecting Landsat 5 TM and Landsat 8/9 OLWe surface reflectance imagery, applying spatial and temporal filtering, and removing clouds and invalid pixels using QA masks.
+3. **We generated** standardized annual composites by creating annual median composites for each city and epoch, then standardizing Landsat bands across sensor generations into a common feature structure.
+4. **We engineered** spectral features by calculating NDBI, BUI, and NDVWe and combining them with relevant Landsat spectral bands to characterize built-up and non-built-up surfaces.
+5. **We constructed** the training dataset by using GHSL to generate built-up/non-built-up labels and extract the corresponding spectral and index features from valid pixels across all cities and epochs.
+6. **We cleaned and prepared** the data by removing invalid values, balancing the classes, and standardizing the features using StandardScaler.
+7. **We trained** the global XGBoost model using the combined training data from all four cities and all four temporal epochs.
+8. **We classified** built-up areas by applying the trained model to each city/year composite to generate built-up and non-built-up classification maps.
+9. **We post-processed** classification maps by applying morphological opening and closing to reduce noise, remove patches below the minimum size threshold, and apply temporal smoothing to maintain consistent urban expansion.
+10. **We calculated** urban growth metrics by measuring built-up area and percentage built-up area for each city and epoch, then computing fragmentation, growth rate, total growth, compactness-related measures, and mean distance from the city center.
+11. **We compared** urban expansion by analyzing classification results and sprawl metrics across the four cities and four temporal periods to identify differences in urban growth patterns.
+12. **We visualized and presented** the results by generating classification maps, time-series plots, comparison charts, summary tables, and the interactive dashboard for exploring the results.
+
+This staged framework ensured the methodology remained consistent across cities and time periods while producing comparable urban-growth indicators from a common remote-sensing and machine-learning workflow.
+

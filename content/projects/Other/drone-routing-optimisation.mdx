@@ -1,0 +1,70 @@
+---
+slug: drone-routing-optimization
+title: Drone Delivery Optimization 
+summary: An exact combinatorial optimization solver for assigning customers to a limited fleet of drones while minimizing total energy consumption under payload and battery constraints.
+
+role: Branch And Bound Executer
+timeline: May 2026
+team: 4 members
+category: Other
+featured: false
+year: 2026
+
+image: /images/projects/oprimization.png
+
+tags:
+  - Branch and Bound
+  - Combinatorial Optimization
+  - Drone Routing
+  - Operations Research
+  - Energy Optimization
+  - Python
+ 
+
+tools:
+  - Python
+  - Optimization
+  - Trees
+  - Comparative Analysis
+---
+# Drone Delivery Optimization
+
+## Overview
+
+This project addresses a drone delivery routing problem as an **exact combinatorial optimization problem**.
+
+We assigned a set of customers to multiple drone routes and determined the order in which each customer should be visited. Unlike a conventional distance-based routing problem, the energy model also accounts for the payload carried by the drone.
+
+The objective was to find a globally optimal set of routes that minimizes total energy consumption while keeping every route within its payload and energy limits.
+
+The solver was implemented in Python inside a Jupyter Notebook using a Branch and Bound search strategy.
+
+## The Challenge
+
+> How can we design a fleet of drones to serve multiple customers while minimizing total energy consumption under payload and battery constraints?
+
+Drone routing becomes more complex when energy consumption depends not only on travel distance but also on the weight being carried.
+
+The solver therefore needs to simultaneously consider:
+
+- Which drone should serve each customer.
+- The order in which customers should be visited.
+- The payload carried by each drone.
+- The energy consumed by every route.
+- Whether each route satisfies the battery and payload constraints.
+
+The underlying search space is combinatorial. For `n` customers and `K` drones, the worst-case number of feasible assignments grows exponentially, making exhaustive enumeration impractical as the number of customers increases.
+
+## Methodology
+
+1. **We modeled** the drone routing problem using Euclidean distance and a payload-dependent energy function.
+2. **We represented** each drone route as an ordered sequence of customers beginning and ending at the depot.
+3. **We initialized** the search with empty drone routes and all customers unassigned.
+4. **We constructed** a greedy initial solution to obtain an initial upper bound.
+5. **We computed** admissible lower bounds for each partial routing solution.
+6. **We branched** by insertion: insert an unassigned customer into every feasible route position.
+7. **We pruned** using bounds by discarding partial solutions whose lower bound could not improve the incumbent.
+8. **We used** a priority-queue search ordered by lower bound to explore the most promising partial solutions first.
+9. **We updated** the incumbent whenever a better complete solution was found.
+10. **We returned** the optimal routing solution once the search had exhausted all potentially better alternatives.
+

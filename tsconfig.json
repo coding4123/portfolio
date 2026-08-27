@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "content/projects/dns-tunneling-detection.mdx", "content/projects/rag-chunks-assessment.mdx", "content/projects/ML/somatrack.mdx", "content/projects/ML/suspicious-network-behavior-detection.mdx", "content/projects/ML/urban-sprawl-analysis.mdx", "content/projects/UI-UX/majlis.mdx"  ],
   "exclude": ["node_modules"]
 }

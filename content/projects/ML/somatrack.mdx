@@ -1,0 +1,103 @@
+---
+slug: somatrack
+title: SomaTrack — Predicting Study-Related Physical Ailments
+summary: A machine learning system that predicts the risk level of study-related physical discomfort among university students using behavioral and ergonomic survey data.
+role: Machine Learning Engineer
+timeline: Academic Project
+team: Academic Project
+category: Machine Learning
+featured: false
+image: /images/projects/somatrack.png
+images:
+     - /images/projects/somatrack1.png
+     - /images/projects/somatrack2.png
+     - /images/projects/somatrack3.png
+     - /images/projects/somatrack4.png
+     - /images/projects/somatrack5.png
+     - /images/projects/somatrack6.png
+     - /images/projects/somatrack7.png
+     - /images/projects/somatrack8.png
+     - /images/projects/somatrack9.png
+
+
+
+
+
+
+
+year: 2026
+
+tags:
+
+     - Machine Learning
+     - Data Science
+     - Classification
+     - Predictive Modeling
+     - Ergonomics
+     - Python
+     - Random Forest
+     - Logistic Regression
+
+tools:
+
+     - Python
+     - Pandas
+     - NumPy
+     - Scikit-learn
+     - Joblib
+     - Data Visualization
+
+---
+# SomaTrack — Predicting Study-Related Physical Ailments
+
+## Overview
+
+**SomaTrack** is a machine learning project focused on predicting study-related physical discomfort among university students.
+
+We built the system using survey data covering factors such as:
+
+* Study habits
+* Posture
+* Screen usage
+* Break frequency
+* Hydration
+* Study environment
+* Seating type
+* Sleep
+* Exercise
+* Other ergonomic and lifestyle conditions
+
+Using these characteristics, We designed the system to estimate the user's overall physical discomfort risk and provide condition-specific predictions for:
+
+* Back pain
+* Neck strain
+* Eye strain
+* Tension headaches
+
+The project combines **supervised machine learning, rule-based scoring, exploratory analysis, and personalized recommendations** to transform survey responses into an understandable risk assessment.
+
+## The Challenge
+
+> How can we use study habits and ergonomic factors to predict the risk of physical discomfort among university students while also identifying the factors that contribute most to that risk?
+
+The challenge is not simply to build a classifier.
+
+We needed the system to consider multiple behavioral, lifestyle, and environmental factors simultaneously and transform them into a meaningful assessment.
+
+SomaTrack therefore combines machine learning predictions with additional rule-based analysis to provide both **risk estimates and contextual explanations**.
+
+## Methodology
+
+We followed this **SomaTrack workflow**, connecting data collection, preprocessing, machine learning prediction, rule-based scoring, and personalized recommendations.
+
+1. **We collected** study and lifestyle data through a guided questionnaire covering study habits, posture, screen usage, break frequency, hydration, and other ergonomic factors.
+2. **We preprocessed** questionnaire responses into the feature format expected by the trained Scikit-learn pipelines to ensure consistent preprocessing between training and prediction.
+3. **We engineered and normalized** features by transforming and normalizing numerical and categorical variables (posture, seat type, lighting, study location) into features compatible with the trained pipelines.
+4. **We applied** supervised machine learning by passing processed features into trained Scikit-learn pipeline models to estimate the user's overall physical discomfort risk based on behavioral, lifestyle, and ergonomic inputs.
+5. **We ran** condition-specific prediction models in addition to the overall prediction, using dedicated models for back pain, neck strain, eye strain, and tension headaches.
+6. **We calculated** prediction probabilities and converted them into percentage-based risk estimates for each discomfort category to aid interpretation.
+7. **We combined** ML predictions with rule-based scoring functions (e.g., `score_back_pain()`) to evaluate specific ergonomic and behavioral factors and provide interpretable context.
+8. **We generated** a structured assessment combining prediction probabilities and rule-based scores, including overall pain level, per-condition risks, summaries, and likely contributing factors for the user.
+9. **We generated** personalized recommendations by translating the strongest risk areas into concise, actionable advice such as posture adjustments, break scheduling, hydration, and lighting improvements.
+10. **We presented** the results through the React frontend with visual risk indicators, summaries, contributing factors, personalized recommendations, and an optional Pomodoro-style study helper.
+

@@ -1,0 +1,79 @@
+---
+
+slug: rag-chunks-assessment
+title: RAG Chunks Assessment — Data Mining for Multimodal Retrieval Quality
+summary: A data mining study that identifies low-quality chunks in multimodal RAG systems through 15-dimensional feature engineering, quality-aware K-means clustering, and targeted enhancement of tables and mathematical formulas.
+role: Data Mining Engineer
+timeline: 3 Months
+team: Team of 4
+category: Machine Learning
+featured: false
+image: /images/projects/rag.png
+year: 2025
+
+tags:
+
+       - Data Mining
+       - Multimodal RAG
+       - Clustering
+       - Feature Engineering
+       - Unsupervised Learning
+       - OCR
+       - Chunk Quality
+
+tools:
+
+       - Python
+       - Pandas
+       - Scikit-learn
+       - PCA
+       - BGE
+       - BM25
+       - Data Visualization
+
+---
+# RAG Chunks Assessment — Data Mining for Multimodal Retrieval Quality
+
+## Overview
+
+Retrieval-Augmented Generation (RAG) systems depend heavily on the quality of the document chunks that are retrieved and passed to the language model.
+
+We investigated chunk quality as a **data mining problem** rather than treating retrieval performance as a single black-box metric.
+
+The study uses the OHR-Bench evaluation framework containing 8,498 question-answer pairs across seven domains and evaluates retrieval using BM25 with top-2 chunk retrieval.
+
+## The Challenge
+
+> Can we use unsupervised data mining techniques to identify naturally occurring patterns in document chunks, distinguish high- and low-quality content, and guide targeted improvements to RAG retrieval performance?
+
+Poor chunk quality can cause a chain of problems in a RAG system.
+
+Low-quality chunks may fail to match relevant queries during retrieval, while poorly structured retrieved content can provide degraded context to the language model.
+
+The problem becomes particularly difficult for complex content such as:
+
+* Tables
+* Mathematical formulas
+* Multi-column layouts
+* OCR-generated content
+* Structured documents
+
+## Methodology
+
+We followed this pipeline:
+
+1. **We collected** chunk-level evaluation data from OHR-Bench.
+2. **We prepared** the dataset and associated query/retrieval context.
+3. **We engineered** a 15-dimensional feature representation.
+4. **We standardized** the numerical features.
+5. **We selected** the optimal number of clusters using quality-aware K-selection.
+6. **We applied** K-means clustering.
+7. **We profiled** the resulting clusters statistically.
+8. **We assigned** quality tiers according to LCS performance.
+9. **We identified** characteristics associated with low-performing chunks.
+10. **We enhanced** tables, mathematical formulas, and structural boundaries in the POOR tier.
+11. **We re-ran** retrieval using the enhanced corpus.
+12. **We compared** LCS performance before and after enhancement.
+13. **We validated** improvements statistically.
+14. **We analyzed** both improvements and potential degradation across clusters.
+

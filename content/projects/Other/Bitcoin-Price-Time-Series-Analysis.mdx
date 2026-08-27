@@ -1,0 +1,77 @@
+---
+
+slug: bitcoin-time-series
+title: Bitcoin Time Series — Analysis & Forecasting
+summary: A time-series analysis project focused on modelling and forecasting Bitcoin prices using the Box–Jenkins ARIMA framework and GARCH volatility models, supported by stationarity testing, residual diagnostics, and forecasting evaluation.
+
+role: Data Science / Time Series Analyst
+timeline: 5 days
+team: Individual Project
+category: Other
+featured: false
+year: 2026
+image: /images/projects/bitcoin.png
+
+tags:
+  - Time Series
+  - Bitcoin
+  - Forecasting
+  - ARIMA
+  - GARCH
+  - Statistical Modelling
+  - Financial Data
+  - Volatility Analysis
+
+tools:
+  - R
+  - forecast
+  - tseries
+  - rugarch
+  - ggplot2
+  - renv
+
+---
+# Bitcoin Time Series — Analysis & Forecasting
+
+## Overview
+
+I investigated Bitcoin and other time-series datasets through statistical modelling and forecasting techniques.
+
+The primary analysis used historical Bitcoin daily price data. I covered data preprocessing, exploratory analysis, stationarity testing, transformation, model identification, parameter estimation, residual diagnostics, volatility analysis, and forecasting.
+
+In addition to the Bitcoin analysis, I used supporting experiments with simulated AR, MA, and ARMA processes to strengthen my understanding of autocorrelation, partial autocorrelation, and model identification.
+
+## The Challenge
+
+> How can I model Bitcoin's highly non-stationary and volatile price behaviour using classical time-series methods?
+
+Bitcoin prices exhibit strong trends and changing variance over time, making direct modelling of the raw price series inappropriate for many classical statistical techniques.
+
+I needed to transform the data appropriately, identify a suitable time-series structure, select statistically justified models, and account for volatility that changes over time.
+
+## Methodology
+
+1. **Data Preparation & Exploration**  I prepared the historical Bitcoin data and explored its overall trend, fluctuations, and changing volatility.
+
+2. **Variance Stabilization**  I applied a logarithmic transformation to reduce the effect of increasing variance and obtain a more stable series.
+
+3. **Stationarity Analysis**  I used **ADF** and **KPSS** tests to determine whether the transformed series was stationary.
+
+4. **Differencing** When necessary, I applied differencing to remove remaining trends and achieve stationarity.
+
+5. **Model Identification**  I analyzed **ACF/PACF** patterns to identify potential ARIMA structures for the stationary series.
+
+6. **ARIMA Model Comparison** I tested multiple ARIMA configurations rather than assuming a single structure would best represent the data, then compared them using **AIC/BIC** to select the most appropriate model.
+
+7. **Model Diagnostics** I examined the selected model's residuals to verify that the temporal patterns had been adequately captured and that no significant structure remained.
+
+8. **Volatility Analysis**  I tested the residuals for **ARCH effects** to determine whether volatility changed over time and whether ARIMA alone was sufficient.
+
+9. **GARCH Modelling**  I fitted GARCH-family models to capture the conditional volatility identified in the residuals.
+
+10. **Forecasting**  I used the selected models to generate forecasts and prediction intervals.
+
+11. **Forecast Evaluation**  I compared the forecasts with observed values using forecasting accuracy measures to assess model performance.
+
+12. **Interpretation**  I combined the results from the mean and volatility models to understand Bitcoin's price dynamics, forecasting behaviour, and changing market volatility.
+

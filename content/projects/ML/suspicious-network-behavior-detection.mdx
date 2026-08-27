@@ -1,0 +1,94 @@
+---
+slug: suspicious-network-behavior-detection
+title: Suspicious Network Behavior Detection System
+summary: A real-time Network Intrusion Detection System that uses flow-based machine learning to identify suspicious network behavior and classify cyberattacks such as DDoS, port scans, botnets, infiltration, and web attacks.
+role: Machine Learning / Cybersecurity Engineer 
+timeline: 1 months / Academic project
+team: Academic Project
+category: Machine Learning
+featured: false
+image: /images/projects/suspicious-network-behavior.png
+year: 2026
+
+
+tags:
+  - Machine Learning
+  - Cybersecurity
+  - Network Security
+  - NIDS
+  - Intrusion Detection
+  - Attacks 
+  - Scapy
+  - Wireshark
+  - Linux
+
+
+tools:
+  - Python
+  - Scapy
+  - Scikit-learn
+  - Random Forest
+  - Streamlit
+  - CIC-IDS2017
+  - Pandas
+---
+# Suspicious Network Behavior Detection System
+
+## Overview
+
+We developed this real-time **Network Intrusion Detection System**
+that analyzes network traffic using flow-based machine learning.
+
+Instead of treating individual packets independently, We designed the system to group
+packets into **bidirectional network flows**, extract statistical and
+temporal characteristics, and use a **Random Forest classifier** to
+identify benign traffic and different categories of cyberattacks.
+
+The system combines:
+
+- Live packet capture
+- Network flow construction
+- Feature extraction
+- Machine learning
+- Attack classification
+- Real-time monitoring
+
+The resulting predictions are exposed through a monitoring dashboard built
+with **Streamlit**.
+
+## The Challenge
+
+> How can We analyze network traffic in real time to detect and classify
+> diverse cyberattacks while minimizing false negatives, which are
+> particularly costly in intrusion detection systems?
+
+A network intrusion detection system needs to distinguish legitimate
+communication from potentially malicious activity while processing traffic
+that can vary significantly in volume, timing, and behavior.
+
+The challenge is therefore not simply classification, but building a pipeline
+that can transform continuously captured packets into meaningful flow-level
+information that a machine learning model can interpret.
+
+## Methodology
+
+1. **We captured** network traffic in real time using a Python-based Scapy sniffer that monitored incoming and outgoing packets.
+
+2. **We grouped** packets into network flows using the standard 5-tuple: source IP, destination IP, source port, destination port, and protocol.
+
+3. **We extracted** flow-based features such as packet sizes, flow duration, bytes per second, packets per second, and inter-arrival times to describe network behavior.
+
+4. **We analyzed** packet timing and TCP behavior by calculating inter-arrival statistics and tracking TCP flags such as SYN, FIN, RST, ACK, PSH, URG, ECE, and CWR.
+
+5. **We preprocessed** the network data by reducing memory usage, removing constant features, handling missing and infinite values, transforming highly skewed data, and removing duplicate flows.
+
+6. **We trained** a Random Forest classifier on the CIC-IDS2017 dataset to distinguish normal traffic from different types of cyberattacks such as DDoS, Port Scans, Botnets, Infiltration, and Web Attacks.
+
+7. **We detected** suspicious network behavior by using the trained model to classify completed flows and identify traffic patterns associated with potential attacks.
+
+8. **We extracted** application-level information from HTTP and HTTPS traffic, including HTTP Host headers and TLS Server Name Indication (SNI), to identify the domains associated with network connections.
+
+9. **We built** a real-time inference pipeline and dashboard that sent flow predictions to a log file and displayed live statistics, alerts, risk confidence, and detected attack types through a Streamlit interface.
+
+10. **We created** a complete threat detection platform that combined real-time packet sniffing, feature engineering, machine learning, and live visualization to detect anomalous network behavior with low-latency predictions.
+
