@@ -10,9 +10,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: {
     default: 'Asmaa M.',
-    template: '%s | Asmaa M.',
+    template: '%s | Asmaa Mobarek',
   },
-  description: 'Portfolio website for Asmaa M.',
+  description: 'Portfolio website for Asmaa Mobarek',
   icons: {
     icon: '/images/favicon.png',
     shortcut: '/images/favicon.png',
